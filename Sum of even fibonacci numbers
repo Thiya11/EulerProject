@@ -1,0 +1,32 @@
+#initializing the parameters for calculation
+
+initial_num = int(input('Enter the maximum number?'))
+first_num = 0
+second_num = 1
+count = 0
+
+#fibonacci Array to push series elements into it
+fibonacciArray = []
+
+#reduce the elements into a single number.
+
+def reduce_num():
+     total = 0
+     for i in fibonacciArray:
+         if(i%2 == 0):
+             total += i
+     print(total)
+        
+# while loop to create fibonacci series.
+# if the maximum number equals or greater than the array element then its finishes the pushing.
+
+while count >=0:
+    range = first_num + second_num
+    first_num = second_num
+    second_num = range
+    fibonacciArray.append(second_num)
+    count+=1
+    if(fibonacciArray[len(fibonacciArray)-1]>= initial_num):
+        fibonacciArray.pop()
+        reduce_num()
+        count = -1
